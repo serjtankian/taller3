@@ -27,8 +27,8 @@ public class PlayList {
 	public ArrayList<Song> getSongs() {
 		return songs;
 	}
-	public void setSongs(Song song) {
-		this.songs.add(song);
+	public void setSongs(ArrayList<Song> songs) {
+		this.songs = songs;
 	}
 	
 	
