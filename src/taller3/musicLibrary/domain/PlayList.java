@@ -5,6 +5,19 @@ import java.util.ArrayList;
 public class PlayList {
 	String name;
 	ArrayList<Song> songs;
+
+	
+	
+	public PlayList(String name, ArrayList<Song> songs) {
+		this.name = name;
+		this.songs = songs;
+	}
+	
+	public PlayList() {
+		this.name="";
+		this.songs=null;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -14,8 +27,8 @@ public class PlayList {
 	public ArrayList<Song> getSongs() {
 		return songs;
 	}
-	public void setSongs(ArrayList<Song> songs) {
-		this.songs = songs;
+	public void setSongs(Song song) {
+		this.songs.add(song);
 	}
 	
 	
