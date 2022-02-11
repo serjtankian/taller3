@@ -18,7 +18,7 @@ public class PrincipalMenu {
     }
     public void listing() { 
         playListDefault.setSongs(list);
-        
+
         playListDefault.getSongs().stream().forEach((n)-> System.out.println (n.getTitle()));
     
     }
