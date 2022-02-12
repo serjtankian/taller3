@@ -43,7 +43,7 @@ public class CreatePlayListMenu {
 			case 2:
 				songs.addAll(playListDefault);
 				break;
-			case 3 :
+			case 3:
 				exit = true;
 				break;
 			default:
@@ -55,7 +55,7 @@ public class CreatePlayListMenu {
 		scanPlayList.close();
 		playList.setName(name);
 		playList.setSongs(songs);
-		
+
 		return playList;
 	}
 

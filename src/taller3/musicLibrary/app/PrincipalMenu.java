@@ -3,7 +3,6 @@ package taller3.musicLibrary.app;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import sun.net.www.content.text.plain;
 import taller3.musicLibrary.domain.PlayList;
 import taller3.musicLibrary.domain.Song;
 
@@ -42,14 +41,14 @@ public class PrincipalMenu {
 				break;
 			case 2:
 				CreatePlayListMenu menuPlayList = new CreatePlayListMenu(songs);
-				//No testeado 
+				// No testeado
 				listPlayList.add(menuPlayList.createPlayList());
-				
+
 				System.out.println("PlayList Guardada");
 
 				break;
 			case 3:
-				//no testeado
+				// no testeado
 				listPlayList.stream().forEach(x -> System.out.println(x.getName()));
 				break;
 			case 4:
@@ -60,8 +59,8 @@ public class PrincipalMenu {
 					listingSongs();
 				}
 				break;
-			case 5 :
-				
+			case 5:
+
 				break;
 			case 6:
 				exit = true;
