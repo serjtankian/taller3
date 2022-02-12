@@ -3,8 +3,8 @@ package taller3.musicLibrary.domain;
 import java.util.ArrayList;
 
 public class PlayList {
-	String name;
-	ArrayList<Song> songs;
+	private String name;
+	private ArrayList<Song> songs =  new ArrayList<Song>() ;
 
 	
 	
@@ -27,9 +27,13 @@ public class PlayList {
 	public ArrayList<Song> getSongs() {
 		return songs;
 	}
+
 	public void setSongs(ArrayList<Song> songs) {
 		this.songs = songs;
 	}
+	
+
+	
 	
 	
 	

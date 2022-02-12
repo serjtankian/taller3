@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 public class Song {
 	private String title, genre, cover,desciption;
-	private Calendar date;
+	private int date;
 	private double duration, id;
 	
 	
@@ -14,14 +14,14 @@ public class Song {
 		this.genre = "";
 		this.cover = "";
 		this.desciption = "";
-		this.date = null;
+		this.date = 0;
 		this.duration = 0.0;
 		this.id = 0.0;
 	}
 
 
 
-	public Song(String title, String genre, String cover, String desciption, Calendar date, double duration,
+	public Song(String title, String genre, String cover, String desciption, int date, double duration,
 			double id) {
 		super();
 		this.title = title;
@@ -83,13 +83,13 @@ public class Song {
 
 
 
-	public Calendar getDate() {
+	public int getDate() {
 		return date;
 	}
 
 
 
-	public void setDate(Calendar date) {
+	public void setDate(int date) {
 		this.date = date;
 	}
 
