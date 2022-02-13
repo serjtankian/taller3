@@ -1,7 +1,8 @@
 package taller3.musicLibrary.app;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import taller3.musicLibrary.domain.PlayList;
 import taller3.musicLibrary.domain.Song;
@@ -17,42 +18,51 @@ public class CreatePlayListMenu {
 
 	public PlayList createPlayList() {
 		PlayList playList = new PlayList();
-		Scanner scanPlayList = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		System.out.println("Ingresa El Nombre De la Playlist");
-		name = scanPlayList.nextLine();
+		try {
+			System.out.println("Ingresa El Nombre De la Playlist");
+			name = br.readLine();
 
-		boolean exit = false;
-		while (!exit) {
+			boolean exit = false;
+			
+			while (!exit) {
 
-			System.out.println("1. Crear Cancion");
-			System.out.println("2. Agregar la Lista Default");
-			System.out.println("3. guardar");
-			option = scanPlayList.nextInt();
+				System.out.println("1. Crear Cancion");
+				System.out.println("2. Agregar la Lista Default");
+				System.out.println("3. guardar");
+				
+				
+				option = Integer.parseInt(br.readLine());
+				switch (option) {
+				case 1:
+					
+					CreateSongMenu menu = new CreateSongMenu();
+					songs.add(menu.createSong());
+					System.out.println("Cancion Guardada");
+					 
+					break;
+				case 2:
+					
+					songs.addAll(playListDefault);
+					
+					break;
+				case 3:
 
-			switch (option) {
-			case 1:
-				CreateSongMenu menu = new CreateSongMenu();
+					exit = true;
 
-				// aqui se produce un error del Scaner
-				songs.add(menu.createSong());
+					break;
+				default:
+					System.out.println("debes elegir una opcion del 1 á 3 ");
+					break;
+				}
 
-				System.out.println("Cancion Guardada");
-
-				break;
-			case 2:
-				songs.addAll(playListDefault);
-				break;
-			case 3:
-				exit = true;
-				break;
-			default:
-				System.out.println("debes elegir una opcion del 1 á 3 ");
-				break;
 			}
 
+		} catch (Exception e) {
+			System.out.println(e);
 		}
-		scanPlayList.close();
+
 		playList.setName(name);
 		playList.setSongs(songs);
 
