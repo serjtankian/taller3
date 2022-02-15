@@ -1,5 +1,8 @@
 package taller3.musicLibrary.domain;
 
+
+
+
 public class Song {
 	private String title, genre, cover, desciption;
 	private int date;
@@ -77,5 +80,9 @@ public class Song {
 	public double getId() {
 		return id;
 	}
+
+	
+
+
 
 }

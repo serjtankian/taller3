@@ -38,7 +38,8 @@ public class CreatePlayListMenu {
 				case 1:
 					
 					CreateSongMenu menu = new CreateSongMenu();
-					songs.add(menu.createSong());
+					Song newSong= menu.createSong();
+					songs.add(newSong);
 					System.out.println("Cancion Guardada");
 					 
 					break;
@@ -53,7 +54,7 @@ public class CreatePlayListMenu {
 
 					break;
 				default:
-					System.out.println("debes elegir una opcion del 1 á 3 ");
+					System.out.println("debes elegir una opcion del 1 ï¿½ 3 ");
 					break;
 				}
 

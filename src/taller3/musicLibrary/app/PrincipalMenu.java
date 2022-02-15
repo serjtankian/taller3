@@ -3,7 +3,8 @@ package taller3.musicLibrary.app;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.stream.Collectors;
+import java.util.Comparator;
+
 
 import taller3.musicLibrary.domain.PlayList;
 import taller3.musicLibrary.domain.Song;
@@ -87,13 +88,21 @@ public class PrincipalMenu {
                          playlistSearch.getSongs().stream().filter(b->b.getDate()==year).forEach(b->printSong(b));
 						}
 
-
-                      
-					  
-
 					break;
 				case "6":
-
+                       System.out.println("ingrese nombre");
+					    filter=br.readLine();
+					   PlayList playlistSearch2= new PlayList();
+					    ArrayList<PlayList> filterList2= new ArrayList<PlayList>();
+					   listPlayList.stream().filter(b->b.getName().equalsIgnoreCase(filter)).forEach(b-> filterList2.add(b));
+					   playlistSearch2 =filterList2.get(0);
+					   System.out.println("lista filtrada: "+playlistSearch2.getName());
+					   System.out.println("1->ordenar por fecha");
+					   System.out.println("2->ordenar por duracion");
+					   String optionSort=br.readLine();
+					   if(Integer.parseInt(optionSort)==1){
+						playlistSearch2.getSongs().stream().sorted(Comparator.comparing(Song::getDate)).forEach(System.out::println);
+					   }
 					break;
 				case "7":
 					exit = true;
