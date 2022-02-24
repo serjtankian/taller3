@@ -10,7 +10,8 @@ import taller3.musicLibrary.domain.Song;
 public class CreatePlayListMenu {
 	private String name;
 	private int option;
-	private ArrayList<Song> songs, playListDefault = new ArrayList<Song>();
+	private ArrayList<Song> songs = new ArrayList<Song>();
+	private ArrayList<Song> playListDefault = new ArrayList<Song>();
 
 	public CreatePlayListMenu(ArrayList<Song> playListDefault) {
 		this.playListDefault = playListDefault;
