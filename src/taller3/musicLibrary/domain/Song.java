@@ -1,24 +1,80 @@
 package taller3.musicLibrary.domain;
 
-
-
-
+/**
+ * esta clase representa las canciones de la biblioteca
+ * 
+ * Song newSong = new Song(); newSong.gerTitle;
+ * 
+ * @version 1.00.000 2022-03-10
+ * 
+ * @author Brahian Stiven Osorio Velasquez brahianstiven.osorio@gmail.com
+ * 
+ * @since 1.00.000 2022-03-10
+ *
+ */
 public class Song {
-	private String title, genre, cover, desciption;
-	private int date;
-	private double duration, id;
+	/**
+	 * es el nombre de la cancion
+	 */
+	private String title;
+	/**
+	 * es el genero de la cancion
+	 */
+	private String genre;
+	/**
+	 * es la caratula de la cancion
+	 */
+	private String cover;
+	/**
+	 * es la descripcion de la cancion
+	 */
+	private String desciption;
+	/**
+	 * es la fecha de lanzamiento de la cancion
+	 */
+	private DateOfSong date;
+	/**
+	 * es la duracion de la cancion
+	 */
+	private double duration;
+	/**
+	 * es el identificador de la cancion
+	 */
+	private double id;
 
+	/**
+	 * este es el costructor una cancion con un solo parametro
+	 * 
+	 * @param titulo String es el nombre de la cancion
+	 * 
+	 * @author Brahian Stiven Osorio Velasquez brahianstiven.osorio@gmail.com
+	 * 
+	 * @since 1.00.000 2022-03-10
+	 */
 	public Song(String titulo) {
-		this.title = titulo;
-		this.genre = "";
-		this.cover = "";
-		this.desciption = "";
-		this.date = 0;
-		this.duration = 0.0;
-		this.id = 0.0;
+		this(titulo, "", "", "", null, 0.0, 0.0);
+
 	}
 
-	public Song(String title, String genre, String cover, String desciption, int date, double duration, double id) {
+	/**
+	 * Este es el costructor de una cancion completo
+	 * 
+	 * @param title      String es el nombre de la cancion
+	 * @param genre      String es el genero de la cancion
+	 * @param cover      String es la caratula de la cancion
+	 * @param desciption String representa una pequeña descripcion de la cancion
+	 * @param date       DateOfSong representa ala fecha de lanzamiento de la
+	 *                   cancion
+	 * @param duration   double es la duracion de la cancion
+	 * @param id         double representa a ala identificacion en el sistema de la
+	 *                   cancion
+	 * 
+	 * @author Brahian Stiven Osorio Velasquez brahianstiven.osorio@gmail.com
+	 * 
+	 * @since 1.00.000 2022-03-10
+	 */
+	public Song(String title, String genre, String cover, String desciption, DateOfSong date, double duration,
+			double id) {
 		super();
 		this.title = title;
 		this.genre = genre;
@@ -61,11 +117,11 @@ public class Song {
 		this.desciption = desciption;
 	}
 
-	public int getDate() {
+	public DateOfSong getDate() {
 		return date;
 	}
 
-	public void setDate(int date) {
+	public void setDate(DateOfSong date) {
 		this.date = date;
 	}
 
@@ -80,9 +136,5 @@ public class Song {
 	public double getId() {
 		return id;
 	}
-
-	
-
-
 
 }
